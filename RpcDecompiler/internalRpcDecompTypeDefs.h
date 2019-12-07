@@ -1984,8 +1984,8 @@ public:
 	void		setpNonEncapsulatedUnionHeader(RVA_T pNonEncap) {m_pNonEncapsulatedUnionHeader = pNonEncap;}
 
 	// operator
-	bool operator<( const TypeToDefine& right);
-	bool operator== ( const TypeToDefine& right);
+	bool operator<( const TypeToDefine& right) const;
+	bool operator== ( const TypeToDefine& right) const;
 };
 
 

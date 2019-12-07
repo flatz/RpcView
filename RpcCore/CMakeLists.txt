@@ -23,12 +23,12 @@ foreach(Files ${CoreFiles})
     
         get_filename_component(Dir ${Files} NAME)
 
-        if(${CMAKE_GENERATOR} MATCHES "Win64")
+        if("${CMAKE_SIZEOF_VOID_P}" STREQUAL "8") # Win64
             AddRpcCore(${Dir})
-        else(${CMAKE_GENERATOR} MATCHES "Win64")
+        else("${CMAKE_SIZEOF_VOID_P}" STREQUAL "8") # Win32
             if(${Dir} MATCHES "32bits")
                 AddRpcCore(${Dir})
             endif(${Dir} MATCHES "32bits")
-        endif(${CMAKE_GENERATOR} MATCHES "Win64")
+        endif("${CMAKE_SIZEOF_VOID_P}" STREQUAL "8")
     endif (IS_DIRECTORY ${Files} )
 endforeach(Files)

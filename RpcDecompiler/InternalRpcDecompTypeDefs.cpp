@@ -88,11 +88,11 @@ TypeToDefine::TypeToDefine(const RVA_T rva, const ParamDesc& paramDesc):
 	
 }
 
-bool TypeToDefine::operator<( const TypeToDefine& right)
+bool TypeToDefine::operator<( const TypeToDefine& right) const
 {
 	return (this->m_rva < right.m_rva);
 }
-bool TypeToDefine::operator== ( const TypeToDefine& right)
+bool TypeToDefine::operator== ( const TypeToDefine& right) const
 {
 	return (this->m_rva == right.m_rva);
 }
